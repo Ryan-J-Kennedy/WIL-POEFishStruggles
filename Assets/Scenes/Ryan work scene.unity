@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 1606683034}
   right: {fileID: 1548620620}
-  rotationSpeed: 100
+  rotationSpeed: 150
 --- !u!4 &1155432185
 Transform:
   m_ObjectHideFlags: 0
