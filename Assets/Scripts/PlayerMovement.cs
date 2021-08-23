@@ -4,35 +4,68 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private GameObject body;
+    //Tail child object
     private GameObject tail;
+    //Rigidbody on player
+    private Rigidbody rb;
 
+    //Tail rotate points
     public Transform left;
     public Transform right;
 
-    public float rotationSpeed;
+    [Header("Movement Settings")]
+    public float tailRotationSpeed;
+    public float moveForce;
+    public float turningSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        body = GameObject.Find("PlayerBody");
+        //Finding values from scene
         tail = GameObject.Find("PlayerTail");
+        rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Call movement method
+        Movement();
+    }
+
+    void Movement()
+    {
         if (Input.GetKey(KeyCode.A))
         {
-            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, right.rotation, rotationSpeed * Time.deltaTime);
+            //Rotate player when moving tail
+            this.transform.Rotate(0f, -turningSpeed * Time.deltaTime, 0f);
+
+            //Rotating tail to rotate point
+            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, right.rotation, tailRotationSpeed * Time.deltaTime);
+
+            //Adding force to move player if the tail is moving
+            if(tail.transform.rotation != right.transform.rotation)
+            {
+                rb.AddRelativeForce(Vector3.back * moveForce);
+            }
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, left.rotation, rotationSpeed * Time.deltaTime);
+            //Rotate player when moving tail
+            this.transform.Rotate(0f, turningSpeed * Time.deltaTime, 0f);
+
+            //Rotating tail to rotate point
+            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, left.rotation, tailRotationSpeed * Time.deltaTime);
+
+            //Adding force to move player if the tail is moving
+            if (tail.transform.rotation != left.transform.rotation)
+            {
+                rb.AddRelativeForce(Vector3.back * moveForce);
+            }
         }
-        else
+        else //Returning the tail to neutral if no inputs
         {
-            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, Quaternion.Euler(0f,0f,0f), rotationSpeed * Time.deltaTime);
+            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, this.transform.rotation, tailRotationSpeed * Time.deltaTime);
         }
     }
 }
