@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public float moveForce;
     public float turningSpeed;
 
+    bool canMove = true;
+    Transform trap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
+        if(canMove == false)
+        {
+            this.transform.position = Vector3.MoveTowards(transform.position, trap.position, 100);
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             //Rotate player when moving tail
@@ -44,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, right.rotation, tailRotationSpeed * Time.deltaTime);
 
             //Adding force to move player if the tail is moving
-            if(tail.transform.rotation != right.transform.rotation)
+            if(tail.transform.rotation != right.transform.rotation && canMove)
             {
                 rb.AddRelativeForce(Vector3.back * moveForce);
             }
@@ -58,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, left.rotation, tailRotationSpeed * Time.deltaTime);
 
             //Adding force to move player if the tail is moving
-            if (tail.transform.rotation != left.transform.rotation)
+            if (tail.transform.rotation != left.transform.rotation && canMove)
             {
                 rb.AddRelativeForce(Vector3.back * moveForce);
             }
@@ -66,6 +74,17 @@ public class PlayerMovement : MonoBehaviour
         else //Returning the tail to neutral if no inputs
         {
             tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, this.transform.rotation, tailRotationSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Trap"))
+        {
+            trap = other.gameObject.transform;
+            canMove = false;
+            rb.velocity = Vector3.zero;
+            other.GetComponentInParent<FishBoatController>().hooked = true;
         }
     }
 }
