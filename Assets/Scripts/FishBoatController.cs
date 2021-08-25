@@ -15,6 +15,7 @@ public class FishBoatController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Finding objects in scene and initilising.
         fishingRod = this.gameObject.transform.Find("Fishing rod");
         hook = fishingRod.gameObject.transform.Find("Hook");
         player = GameObject.Find("Player").transform;
@@ -23,12 +24,15 @@ public class FishBoatController : MonoBehaviour
     private void FixedUpdate()
     {
         Hooked();
+
+        //Moving hook down to the height of the player
         if (hook.position.y > player.position.y)
         {
             fishingRod.transform.position -= new Vector3(0f, fishingRodSpeed, 0f);
         }
     }
 
+    //When a fish is hooked moving the hook up to top
     public void Hooked()
     {
         if (hook.position.y < rodPos.position.y && hooked)

@@ -33,7 +33,7 @@ public class WaterBoundingScript : MonoBehaviour
             isUnderwater = false;
         }
 
-        if(isUnderwater)
+        if(!isUnderwater)
         {
             vg.intensity.value = 0.35f;
             dof.focusDistance.value = 2f;
