@@ -34,6 +34,31 @@ public class PlayerMovement : MonoBehaviour
     {
         //Call movement method
         Movement();
+        HeightMovement();
+
+        Vector3 currentRotation = this.transform.rotation.eulerAngles;
+        currentRotation.z = 0.0f;
+        this.transform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    void HeightMovement()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            //Rotate player
+            if (this.transform.rotation.x < 0.30)
+            {
+                this.transform.Rotate(turningSpeed * Time.deltaTime, 0f, 0f);
+            }
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            //Rotate player
+            if (this.transform.rotation.x > -0.30)
+            {
+                this.transform.Rotate(-turningSpeed * Time.deltaTime, 0f, 0f);
+            }
+        }
     }
 
     void Movement()
