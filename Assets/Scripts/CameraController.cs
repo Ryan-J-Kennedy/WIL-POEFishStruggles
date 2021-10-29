@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     void Rotate()
     {
-        rotatingSpeed = Mathf.Abs(player.rotation.y - this.transform.rotation.y) * 200;
+        rotatingSpeed = Mathf.Abs(player.rotation.y + player.rotation.x - this.transform.rotation.y + this.transform.rotation.x) * 200;
 
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, player.rotation, rotatingSpeed * Time.deltaTime);
     }
