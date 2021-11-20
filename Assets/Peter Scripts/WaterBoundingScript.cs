@@ -6,11 +6,11 @@ using UnityEngine.Rendering.Universal;
 
 public class WaterBoundingScript : MonoBehaviour
 {
-    public GameObject BoundingBox, Player;
+    public GameObject Player;
     public Volume Post;
     public Color UnderwaterColour;
 
-    public bool isUnderwater = false;
+    public bool isUnderwater = true;
 
     //Effects
     private Vignette vg;
@@ -24,16 +24,16 @@ public class WaterBoundingScript : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if(BoundingBox.GetComponent<BoxCollider>().bounds.Contains(Player.transform.position))
-        {
-            isUnderwater = true;
-        }
-        else
-        {
-            isUnderwater = false;
-        }
+        //if(BoundingBox.GetComponent<BoxCollider>().bounds.Contains(Player.transform.position))
+        //{
+        //    isUnderwater = true;
+        //}
+        //else
+        //{
+        //    isUnderwater = false;
+        //}
 
-        if(!isUnderwater)
+        if(isUnderwater)
         {
             vg.intensity.value = 0.35f;
             dof.focusDistance.value = 2f;

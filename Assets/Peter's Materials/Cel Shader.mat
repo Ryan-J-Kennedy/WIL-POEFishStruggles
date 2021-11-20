@@ -21,7 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cel Shader
-  m_Shader: {fileID: -6465566751694194690, guid: 49fc8c35e7e07cc4e958f2334dc848b2, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 49fc8c35e7e07cc4e958f2334dc848b2,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -33,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_55677e1424a24e1aaacf14e95e24f3a5:
-        m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b706411e540b154eb0a13cf4b9bc82c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -93,6 +94,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_100fd7f3cbb74e1088fe5313d877ac44: -0.38
+    - Vector1_10a1a42971804c92a4b7878be8f416e4: 0.235
+    - Vector1_882e351a56a04f719f352e1d9da5985d: 0.073
+    - Vector1_dc9de3a88ba94f50bc217407474a0141: 0.153
     - Vector1_100fd7f3cbb74e1088fe5313d877ac44: 0.43
     - Vector1_10a1a42971804c92a4b7878be8f416e4: 0.575
     - Vector1_882e351a56a04f719f352e1d9da5985d: 0.575
@@ -124,8 +129,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_3d4f2cef8bcf4e45a99938a19df00288: {r: 0.06563723, g: 0.5566038, b: 0.47028, a: 0}
-    - Color_e0e767199a154665848ccf2783b6a948: {r: 0.5767177, g: 0.9056604, b: 0.8427358, a: 0}
+    - Color_3d4f2cef8bcf4e45a99938a19df00288: {r: 0.065637134, g: 0.5566037, b: 0.47027987,
+        a: 1}
+    - Color_e0e767199a154665848ccf2783b6a948: {r: 0.5767177, g: 0.9056604, b: 0.8427358,
+        a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

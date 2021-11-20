@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //Tail child object
-    private GameObject tail;
+    public GameObject tail;
     //Rigidbody on player
     private Rigidbody rb;
+    GameController gc;
 
     //Tail rotate points
     public Transform left;
     public Transform right;
+    public Transform middle;
 
     [Header("Movement Settings")]
     public float tailRotationSpeed;
@@ -25,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //Finding values from scene
-        tail = GameObject.Find("PlayerTail");
+        //tail = GameObject.Find("PlayerTail");
         rb = this.GetComponent<Rigidbody>();
+        gc = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,31 @@ public class PlayerMovement : MonoBehaviour
     {
         //Call movement method
         Movement();
+        HeightMovement();
+
+        Vector3 currentRotation = this.transform.rotation.eulerAngles;
+        currentRotation.z = 180.0f;
+        this.transform.localRotation = Quaternion.Euler(currentRotation);
+    }
+
+    void HeightMovement()
+    {
+        Vector3 rotation = this.transform.rotation.eulerAngles;
+        rotation.x += Input.GetAxis("Vertical") * turningSpeed * Time.deltaTime;
+
+        //if(rotation.x > 40f)
+        //{
+        //    rotation.x = 40f;
+        //}
+        //else if(rotation.x < -40f)
+        //{
+        //    rotation.x = -40f;
+        //}
+
+        //rotation.x = Mathf.Clamp(rotation.x, -40f, 40f);
+
+        this.transform.rotation = Quaternion.Euler(rotation);
+
     }
 
     void Movement()
@@ -43,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
             this.transform.position = Vector3.MoveTowards(transform.position, trap.position, 100);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.D))
         {
             //Rotate player when moving tail
             this.transform.Rotate(0f, -turningSpeed * Time.deltaTime, 0f);
@@ -57,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddRelativeForce(Vector3.back * moveForce);
             }
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.A))
         {
             //Rotate player when moving tail
             this.transform.Rotate(0f, turningSpeed * Time.deltaTime, 0f);
@@ -73,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else //Returning the tail to neutral if no inputs
         {
-            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, this.transform.rotation, tailRotationSpeed * Time.deltaTime);
+            tail.transform.rotation = Quaternion.RotateTowards(tail.transform.rotation, middle.rotation, tailRotationSpeed * Time.deltaTime);
         }
     }
 
@@ -85,6 +113,12 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
             rb.velocity = Vector3.zero;
             other.GetComponentInParent<FishBoatController>().hooked = true;
+            gc.TurnOnDialouge();
+        }
+        else if (other.CompareTag("Food"))
+        {
+            gc.foodAmount++;
+            GameObject.Destroy(other.gameObject);
         }
     }
 }
