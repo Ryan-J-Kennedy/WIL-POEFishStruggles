@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Transform player;
+    public WaterBoundingScript waterScript;
     public float rotatingSpeed = 20;
+    public Transform water;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").transform;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
-        Rotate();
+        CheckWater();
     }
 
-    void Rotate()
+    void CheckWater()
     {
-        rotatingSpeed = Mathf.Abs(player.rotation.y + player.rotation.x - this.transform.rotation.y + this.transform.rotation.x) * 200;
-
-        this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, player.rotation, rotatingSpeed * Time.deltaTime);
-    }
-
-    void FollowPlayer()
-    {
-        Vector3 playerPos = player.position;
-        this.transform.position = playerPos;
+        if(this.transform.position.y > 21)
+        {
+            water.rotation = Quaternion.Euler(0, 0, 0);
+            waterScript.isUnderwater = false;
+        }
+        else
+        {
+            water.rotation = Quaternion.Euler(180, 0, 0);
+            waterScript.isUnderwater = true;
+        }
     }
 }
