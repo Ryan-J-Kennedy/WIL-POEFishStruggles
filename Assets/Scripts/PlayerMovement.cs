@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool canMove = true;
     Transform trap;
+    float currentTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -119,6 +120,21 @@ public class PlayerMovement : MonoBehaviour
         {
             gc.foodAmount++;
             GameObject.Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Current"))
+        {
+            currentTime = 0;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Current"))
+        {
+            Current current = other.GetComponent<Current>();
+            float currentForce = current.strength + currentTime;
+            rb.AddRelativeForce(current.direction.forward * currentForce);
+            currentTime += 0.02f;
         }
     }
 }
