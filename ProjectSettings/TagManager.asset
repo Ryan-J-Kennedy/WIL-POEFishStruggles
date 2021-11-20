@@ -7,6 +7,7 @@ TagManager:
   - Trap
   - Food
   - Water
+  - Current
   layers:
   - Default
   - TransparentFX
