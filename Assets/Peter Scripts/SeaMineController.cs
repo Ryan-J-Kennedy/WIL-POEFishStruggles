@@ -12,6 +12,15 @@ public class SeaMineController : MonoBehaviour
         mine.SetActive(false);
 
         explosion.Play();
+
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerMovement>().Death();
+        }
+        else if (other.CompareTag("Fish"))
+        {
+            other.GetComponent<Fish>().Death();
+        }
     }
 
 }

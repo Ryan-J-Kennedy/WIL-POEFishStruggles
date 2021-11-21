@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true;
+    bool trapped = false;
     Transform trap;
     float currentTime = 0;
 
@@ -40,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         //Call movement method
         Movement();
         HeightMovement();
+
+        if (transform.position.y > 3f)
+            rb.useGravity = true;
+        else
+            rb.useGravity = false;
 
         Vector3 currentRotation = this.transform.rotation.eulerAngles;
         currentRotation.z = 180.0f;
@@ -63,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
         //rotation.x = Mathf.Clamp(rotation.x, -40f, 40f);
 
         this.transform.rotation = Quaternion.Euler(rotation);
+
+    }
+
+    public void Death()
+    {
 
     }
 
@@ -113,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
         {
             trap = other.gameObject.transform;
             canMove = false;
+            trapped = true;
             rb.velocity = Vector3.zero;
             other.GetComponentInParent<FishBoatController>().hooked = true;
             gc.TurnOnDialouge();

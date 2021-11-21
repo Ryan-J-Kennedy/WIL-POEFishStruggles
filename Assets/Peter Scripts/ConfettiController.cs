@@ -6,9 +6,10 @@ public class ConfettiController : MonoBehaviour
 {
     public ParticleSystem confetti;
 
-    public void OnTriggerEnter(Collider other) {
+    public void OnTriggerExit(Collider other) {
 
-        confetti.Play();
+        if(other.CompareTag("Player"))
+            confetti.Play();
     }
 
 }

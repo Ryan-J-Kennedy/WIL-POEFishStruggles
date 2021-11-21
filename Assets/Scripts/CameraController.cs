@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     void CheckWater()
     {
-        if(this.transform.position.y > 21)
+        if(this.transform.position.y > 3f)
         {
             water.rotation = Quaternion.Euler(0, 0, 0);
             waterScript.isUnderwater = false;

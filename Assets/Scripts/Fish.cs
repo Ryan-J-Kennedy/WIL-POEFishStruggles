@@ -8,7 +8,9 @@ public class Fish : MonoBehaviour
     Vector3 posToLeader;
     FishGroup group;
     GameController gc;
+    Animator ani;
 
+    bool trapped = false;
     bool canMove = true;
     Transform trap;
 
@@ -35,10 +37,15 @@ public class Fish : MonoBehaviour
             transform.LookAt(pos);
 
         }
-        else if(!canMove)
+        else if(trapped)
         {
             this.transform.position = Vector3.MoveTowards(transform.position, trap.position, 100);
         }
+    }
+
+    public void Death()
+    {
+
     }
 
     public void SetLeader(Transform _groupleader, FishGroup _group)
@@ -63,6 +70,10 @@ public class Fish : MonoBehaviour
             posToLeader = newPos - groupLeader.position;
             transform.position = newPos;
         }
+        else if (other.CompareTag("Water"))
+        {
+            this.transform.position -= new Vector3(0f, 0.1f, 0f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -71,7 +82,7 @@ public class Fish : MonoBehaviour
         {
             trap = other.gameObject.transform;
             canMove = false;
-            //rb.velocity = Vector3.zero;
+            trapped = true;
             other.GetComponentInParent<FishBoatController>().hooked = true;
             other.tag = "Untagged";
             group.fishNumber--;
