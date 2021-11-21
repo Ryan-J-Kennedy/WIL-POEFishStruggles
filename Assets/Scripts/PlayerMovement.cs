@@ -20,8 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveForce;
     public float turningSpeed;
 
-    [HideInInspector]
-    public bool canMove = true;
+    bool canMove = true;
     Transform trap;
     float currentTime = 0;
 
