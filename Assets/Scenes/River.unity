@@ -14074,6 +14074,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: VelocityModule.z.maxCurve.m_Curve.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14151,11 +14155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.026176924
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.99965733
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -14167,7 +14171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -17754,8 +17758,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
+      propertyPath: VelocityModule.inWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2568033082001867709, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: VelocityModule.z.maxCurve.m_Curve.Array.size
@@ -17835,11 +17847,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.026176924
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.99965733
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -17851,7 +17863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -183
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099432246245335293, guid: 6c1d9f6cbe3c1fb48aaa6ae61a74813b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -28824,11 +28836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -37.96
+      value: -95.6
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -356.37
+      value: -1070.1
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalRotation.w
