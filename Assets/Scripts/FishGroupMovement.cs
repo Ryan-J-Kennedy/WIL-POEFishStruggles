@@ -6,9 +6,6 @@ public class FishGroupMovement : MonoBehaviour
 {
     public GameObject MoveArea;
     BoxCollider Area;
-    float maxY, minY;
-    float maxX, minX;
-    float maxZ, minZ;
 
     Vector3 moveLocation;
 
@@ -18,6 +15,7 @@ public class FishGroupMovement : MonoBehaviour
         Area = MoveArea.GetComponent<BoxCollider>();
         Vector3 pos = MoveArea.transform.position;
 
+        //Gets a postion within the area they can swim
         moveLocation = new Vector3(
             Random.Range(Area.bounds.min.x, Area.bounds.max.x), 
             Random.Range(Area.bounds.min.y, Area.bounds.max.y), 
@@ -25,11 +23,13 @@ public class FishGroupMovement : MonoBehaviour
 
         this.transform.position = moveLocation;
 
+        //Calls the change spot coroutine
         StartCoroutine(ChangeSpot());
     }
 
     IEnumerator ChangeSpot()
     {
+        //Waits and then chooses and new random pos
         yield return new WaitForSeconds(2);
 
         moveLocation = new Vector3(
@@ -39,11 +39,5 @@ public class FishGroupMovement : MonoBehaviour
         this.transform.position = moveLocation;
 
         StartCoroutine(ChangeSpot());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

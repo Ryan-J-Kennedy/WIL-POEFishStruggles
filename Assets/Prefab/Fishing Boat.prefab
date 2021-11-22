@@ -721,11 +721,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7684837356767593024, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -7496272180793774484, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5905015676323177688, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5425460020468175363, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1263621137406710486, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -741,6 +753,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fishing Barge
       objectReference: {fileID: 0}
+    - target: {fileID: 1416751469458250615, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3762736192301376435, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -750,6 +766,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5003563274206716603, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505912596536071647, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0424
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505912596536071647, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.4752
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505912596536071647, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373341970872464533, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
