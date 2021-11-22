@@ -645,6 +645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8459326902965879661}
     m_Modifications:
+    - target: {fileID: -9154660922331352997, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -701,9 +705,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7496272180793774484, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5425460020468175363, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 299538121568211994, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
       propertyPath: m_Name
       value: Fishing Barge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3762736192301376435, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129470494004754378, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206599678093856294, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87d853a2fefdb9943ae47e1337931b67, type: 3}
