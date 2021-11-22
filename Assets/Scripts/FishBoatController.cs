@@ -25,10 +25,13 @@ public class FishBoatController : MonoBehaviour
     {
         Hooked();
 
-        Vector3 playerHeight = new Vector3(fishingRod.transform.position.x, player.position.y + 1, fishingRod.transform.position.z);
+        if (!hooked)
+        {
+            Vector3 playerHeight = new Vector3(fishingRod.transform.position.x, player.position.y + 1, fishingRod.transform.position.z);
 
-        //Moving hook down to the height of the player
-        fishingRod.position = Vector3.MoveTowards(fishingRod.position, playerHeight, 2);
+            //Moving hook down to the height of the player
+            fishingRod.position = Vector3.MoveTowards(fishingRod.position, playerHeight, 2);
+        }
     }
 
     //When a fish is hooked moving the hook up to top

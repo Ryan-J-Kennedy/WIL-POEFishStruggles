@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26430,7 +26430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a810a6324445baa4bae84bd92d17d585, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc3054c9c2fc7b443a109d7e26d7275b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31114,15 +31114,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 180.2
+      value: 152.9
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95.6
+      value: -47.4
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1070.1
+      value: -702.1
       objectReference: {fileID: 0}
     - target: {fileID: 744154177187078568, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32314,8 +32314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 234.192, y: 77.8658}
+  m_AnchoredPosition: {x: 7.0999756, y: -32.647003}
+  m_SizeDelta: {x: 332.3675, y: 118.7068}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2052486799
 CanvasRenderer:
@@ -32346,7 +32346,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 6226e5c173066d64fb08a9f85570f15a, type: 3}
     m_FontSize: 53
     m_FontStyle: 0
     m_BestFit: 0
@@ -32358,7 +32358,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Food:'
+  m_Text: Food
 --- !u!1001 &2052540675
 PrefabInstance:
   m_ObjectHideFlags: 0
