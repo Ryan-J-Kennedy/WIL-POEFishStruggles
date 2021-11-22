@@ -12899,10 +12899,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6226e5c173066d64fb08a9f85570f15a, type: 3}
-    m_FontSize: 35
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -12921,14 +12921,15 @@ MonoBehaviour:
 
 
     Avoid
-    fishing hooks to prevent being caught
+    fishing hooks and sharks to prevent being caught
 
 
-    Avoid Mines to prevent being blown
-    up
+    Avoid Mines to prevent
+    being blown up
 
 
-    Eat food to increase your score'
+    Eat food to increase your score and take care not to get
+    your fish brothers caught'
 --- !u!222 &217847181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18646,7 +18647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7215, y: 461}
+  m_AnchoredPosition: {x: -0.000025511, y: 436}
   m_SizeDelta: {x: 558.557, y: 146.3708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346187552
@@ -32626,7 +32627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &661196753
 RectTransform:
   m_ObjectHideFlags: 0
