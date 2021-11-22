@@ -9,6 +9,8 @@ public class Fish : MonoBehaviour
     FishGroup group;
     GameController gc;
     Animator ani;
+    bool spawning = true;
+    float moveSpeed;
 
     bool trapped = false;
     bool canMove = true;
@@ -19,21 +21,36 @@ public class Fish : MonoBehaviour
     {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         posToLeader = transform.position - groupLeader.position;
+        moveSpeed = Random.Range(moveSpeed - 1, moveSpeed + 1);
+
+        StartCoroutine(StopSpawn());
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
-        
+    }
+
+    IEnumerator StopSpawn()
+    {
+        yield return new WaitForSeconds(3);
+
+        spawning = false;
     }
 
     void Movement()
     {
-        if (canMove && groupLeader.GetComponent<PlayerMovement>().canMove)
+        if (groupLeader.gameObject.CompareTag("Player"))
+        {
+            if (!groupLeader.GetComponent<PlayerMovement>().canMove)
+                return;
+        }
+
+        if (canMove)
         {
             Vector3 pos = groupLeader.position + posToLeader;
-            transform.position = Vector3.MoveTowards(transform.position, pos, 7f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos, moveSpeed * Time.deltaTime);
             transform.LookAt(pos);
 
         }
@@ -48,15 +65,16 @@ public class Fish : MonoBehaviour
 
     }
 
-    public void SetLeader(Transform _groupleader, FishGroup _group)
+    public void SetLeader(Transform _groupleader, FishGroup _group, float _moveSpeed)
     {
         groupLeader = _groupleader;
         group = _group;
+        moveSpeed = _moveSpeed;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Fish") || other.CompareTag("Player"))
+        if ((other.CompareTag("Fish") || other.CompareTag("Player")) && spawning)
         {
             if (other.CompareTag("Fish") && !other.GetComponent<Fish>().canMove)
             {
@@ -72,7 +90,7 @@ public class Fish : MonoBehaviour
         }
         else if (other.CompareTag("Water"))
         {
-            this.transform.position -= new Vector3(0f, 0.1f, 0f);
+            posToLeader.y -= 0.1f;
         }
     }
 
@@ -92,5 +110,6 @@ public class Fish : MonoBehaviour
             gc.foodAmount++;
             GameObject.Destroy(other.gameObject);
         }
+        
     }
 }
