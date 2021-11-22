@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.3503026, g: 0.4702471, b: 0.6037736, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.01
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17062,8 +17062,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514944194}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 3.4, z: -267.6482}
-  m_LocalScale: {x: 162.26526, y: 162.26526, z: 215.80081}
+  m_LocalPosition: {x: 0, y: 3.4, z: -496.3918}
+  m_LocalScale: {x: 162.26526, y: 162.26526, z: 261.5506}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -24407,6 +24407,10 @@ PrefabInstance:
     - target: {fileID: 78835965512891158, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: maxRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 78835965512891158, guid: d7070315821bef846896bb2be292e17a, type: 3}
+      propertyPath: fishSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 78835965512891158, guid: d7070315821bef846896bb2be292e17a, type: 3}
       propertyPath: fishNumber

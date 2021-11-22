@@ -21,6 +21,7 @@ public class Fish : MonoBehaviour
     {
         gc = GameObject.Find("GameController").GetComponent<GameController>();
         posToLeader = transform.position - groupLeader.position;
+        moveSpeed = Random.Range(moveSpeed - 1, moveSpeed + 1);
 
         StartCoroutine(StopSpawn());
     }
@@ -87,6 +88,10 @@ public class Fish : MonoBehaviour
             posToLeader = newPos - groupLeader.position;
             transform.position = newPos;
         }
+        else if (other.CompareTag("Water"))
+        {
+            posToLeader.y -= 0.1f;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -105,9 +110,6 @@ public class Fish : MonoBehaviour
             gc.foodAmount++;
             GameObject.Destroy(other.gameObject);
         }
-        else if (other.CompareTag("Water"))
-        {
-            this.transform.position -= new Vector3(0f, 0.1f, 0f);
-        }
+        
     }
 }
