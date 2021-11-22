@@ -7,7 +7,7 @@ public class FishGroup : MonoBehaviour
     public GameObject fish;
     public int fishNumber;
     public float maxRange;
-    public float minRange;
+    public float fishSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,6 @@ public class FishGroup : MonoBehaviour
         for (int i = 0; i < fishNumber; i++)
         {
             SpawnFish();
-
         }
     }
 
@@ -31,7 +30,7 @@ public class FishGroup : MonoBehaviour
         }
 
         GameObject fishObject = Instantiate(fish, new Vector3(posX, posY, posZ), Quaternion.Euler(0, 90, 0));
-        fishObject.GetComponent<Fish>().SetLeader(this.transform, this);
+        fishObject.GetComponent<Fish>().SetLeader(this.transform, this, fishSpeed);
     }
 
     public Vector3 NewPos()
