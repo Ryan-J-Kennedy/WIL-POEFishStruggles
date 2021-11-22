@@ -4824,10 +4824,10 @@ GameObject:
   - component: {fileID: 8500759573279910559}
   - component: {fileID: 4780316328870716730}
   - component: {fileID: 7328463897810588144}
-  - component: {fileID: 8453066552777212380}
+  - component: {fileID: 7218121374020431081}
   m_Layer: 0
   m_Name: FishFood
-  m_TagString: FishFood
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -4896,8 +4896,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8453066552777212380
-MeshCollider:
+--- !u!135 &7218121374020431081
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4906,7 +4906,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -951608786083511892, guid: 581fc17633eaf854289010900af762fb, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.009666744
+  m_Center: {x: -0.000113809714, y: -0.00019130166, z: 0.005276383}

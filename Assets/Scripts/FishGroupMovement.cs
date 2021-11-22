@@ -30,7 +30,7 @@ public class FishGroupMovement : MonoBehaviour
     IEnumerator ChangeSpot()
     {
         //Waits and then chooses and new random pos
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(Random.Range(1.5f, 3f));
 
         moveLocation = new Vector3(
             Random.Range(Area.bounds.min.x, Area.bounds.max.x),
