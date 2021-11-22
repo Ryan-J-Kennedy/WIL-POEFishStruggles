@@ -8,6 +8,7 @@ public class Dialouge : MonoBehaviour
 
     GameController gc;
     Story story;
+    bool passed = false;
 
     private void Start()
     {
@@ -19,8 +20,12 @@ public class Dialouge : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            story.StartTutorial2();
-            gc.inOcean = true;
+            if (passed == false)
+            {
+                story.StartTutorial2();
+                gc.inOcean = true;
+                passed = true;
+            }
         }
     }
 }

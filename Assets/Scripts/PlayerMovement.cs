@@ -137,7 +137,12 @@ public class PlayerMovement : MonoBehaviour
         {
             currentTime = 0;
         }
-        else if (other.CompareTag("Shark"))
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Shark"))
         {
             Death();
         }

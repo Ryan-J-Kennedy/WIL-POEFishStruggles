@@ -105,6 +105,6 @@ public class Story : MonoBehaviour
 
         yield return new WaitForSeconds(8);
 
-        endGameText.text = "While you were playing our game, roughly " + Time.realtimeSinceStartup * 5000000 + " fish were caught";
+        endGameText.text = "While you were playing our game, roughly " + (Time.realtimeSinceStartup / 60) * 5000000 + " fish were caught";
     }
 }
