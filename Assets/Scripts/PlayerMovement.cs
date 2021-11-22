@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Death()
     {
-
+        gc.Death();
     }
 
     void Movement()
@@ -123,7 +123,8 @@ public class PlayerMovement : MonoBehaviour
             trapped = true;
             rb.velocity = Vector3.zero;
             other.GetComponentInParent<FishBoatController>().hooked = true;
-            gc.TurnOnDialouge();
+            Death();
+            //gc.TurnOnDialouge();
         }
         //Pick up food
         else if (other.CompareTag("Food"))
@@ -135,6 +136,10 @@ public class PlayerMovement : MonoBehaviour
         else if (other.CompareTag("Current"))
         {
             currentTime = 0;
+        }
+        else if (other.CompareTag("Shark"))
+        {
+            Death();
         }
     }
 
