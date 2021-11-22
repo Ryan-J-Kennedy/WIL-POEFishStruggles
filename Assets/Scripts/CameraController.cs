@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public WaterBoundingScript waterScript;
     public float rotatingSpeed = 20;
     public Transform water;
+    public GameObject fog;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,13 @@ public class CameraController : MonoBehaviour
     {
         if(this.transform.position.y > 3f)
         {
+            fog.SetActive(false);
             water.rotation = Quaternion.Euler(0, 0, 0);
             waterScript.isUnderwater = false;
         }
         else
         {
+            fog.SetActive(true);
             water.rotation = Quaternion.Euler(180, 0, 0);
             waterScript.isUnderwater = true;
         }
