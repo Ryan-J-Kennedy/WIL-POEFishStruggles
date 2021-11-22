@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
 
     void CheckWater()
     {
+        //checks if the camera is above the waterline and the shader needs to be on or off
         if(this.transform.position.y > 3f)
         {
             fog.SetActive(false);

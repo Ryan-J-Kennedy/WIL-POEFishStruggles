@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveForce;
     public float turningSpeed;
 
+    public GameObject[] currentParticles;
+
     [HideInInspector]
     public bool canMove = true;
     bool trapped = false;
@@ -42,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         HeightMovement();
 
+        //Add gravitiy if the player is above the water level
         if (transform.position.y > 3f)
             rb.useGravity = true;
         else
@@ -54,19 +57,9 @@ public class PlayerMovement : MonoBehaviour
 
     void HeightMovement()
     {
+        //Rotate player up and down
         Vector3 rotation = this.transform.rotation.eulerAngles;
         rotation.x += Input.GetAxis("Vertical") * turningSpeed * Time.deltaTime;
-
-        //if(rotation.x > 40f)
-        //{
-        //    rotation.x = 40f;
-        //}
-        //else if(rotation.x < -40f)
-        //{
-        //    rotation.x = -40f;
-        //}
-
-        //rotation.x = Mathf.Clamp(rotation.x, -40f, 40f);
 
         this.transform.rotation = Quaternion.Euler(rotation);
 
@@ -79,11 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
+        //If stuck in trap and cant move
         if(canMove == false)
         {
             this.transform.position = Vector3.MoveTowards(transform.position, trap.position, 100);
         }
 
+        //Key inputs
         if (Input.GetKey(KeyCode.D))
         {
             //Rotate player when moving tail
@@ -120,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Get caught by the trap and stop moving
         if (other.CompareTag("Trap"))
         {
             trap = other.gameObject.transform;
@@ -129,11 +125,13 @@ public class PlayerMovement : MonoBehaviour
             other.GetComponentInParent<FishBoatController>().hooked = true;
             gc.TurnOnDialouge();
         }
+        //Pick up food
         else if (other.CompareTag("Food"))
         {
             gc.foodAmount++;
             GameObject.Destroy(other.gameObject);
         }
+        //Reset current time
         else if (other.CompareTag("Current"))
         {
             currentTime = 0;
@@ -142,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //Add current and direction
         if (other.CompareTag("Current"))
         {
             Current current = other.GetComponent<Current>();
@@ -151,6 +150,24 @@ public class PlayerMovement : MonoBehaviour
 
             rb.AddForce(current.transform.forward * currentForce);
             currentTime += 0.1f;
+
+            foreach (GameObject go in currentParticles)
+            {
+                go.SetActive(true);
+                //go.transform.rotation = Quaternion.Euler(-current.transform.forward);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        //Remove current particle effect
+        if (other.CompareTag("Current"))
+        {
+            foreach (GameObject go in currentParticles)
+            {
+                go.SetActive(false);
+            }
         }
     }
 }

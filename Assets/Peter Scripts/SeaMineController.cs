@@ -12,7 +12,7 @@ public class SeaMineController : MonoBehaviour
         mine.SetActive(false);
 
         explosion.Play();
-
+        //Check what hits the mine and calls death methods
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerMovement>().Death();

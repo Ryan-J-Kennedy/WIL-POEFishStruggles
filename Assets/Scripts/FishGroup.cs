@@ -20,19 +20,23 @@ public class FishGroup : MonoBehaviour
 
     void SpawnFish()
     {
+        //Gets random position in range
         float posX = Random.Range(this.transform.position.x - maxRange, this.transform.position.x + maxRange);
         float posZ = Random.Range(this.transform.position.z, this.transform.position.z + maxRange);
         float posY = Random.Range(this.transform.position.y - maxRange, this.transform.position.y + maxRange);
 
+        //Loops until its not blocking player
         while(posX > transform.position.x - 1 && posX < transform.position.x + 1)
         {
             posX = Random.Range(this.transform.position.x - maxRange, this.transform.position.x + maxRange);
         }
 
+        //Spawns and sets variables of the fish
         GameObject fishObject = Instantiate(fish, new Vector3(posX, posY, posZ), Quaternion.Euler(0, 90, 0));
         fishObject.GetComponent<Fish>().SetLeader(this.transform, this, fishSpeed);
     }
 
+    //Gets a new random pos for the fish
     public Vector3 NewPos()
     {
         float posX = Random.Range(this.transform.position.x - maxRange, this.transform.position.x + maxRange);
@@ -45,11 +49,5 @@ public class FishGroup : MonoBehaviour
         }
 
         return new Vector3(posX, posY, posZ);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
