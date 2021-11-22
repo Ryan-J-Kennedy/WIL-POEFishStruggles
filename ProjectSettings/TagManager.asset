@@ -10,6 +10,7 @@ TagManager:
   - Current
   - Fish
   - FishFood
+  - Shark
   layers:
   - Default
   - TransparentFX
