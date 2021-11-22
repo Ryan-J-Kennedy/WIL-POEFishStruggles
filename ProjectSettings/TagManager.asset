@@ -9,6 +9,7 @@ TagManager:
   - Water
   - Current
   - Fish
+  - FishFood
   layers:
   - Default
   - TransparentFX
